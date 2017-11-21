@@ -1,0 +1,742 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RentCarModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="RentCarModelStoreContainer">
+          <EntitySet Name="tb_aluguel" EntityType="RentCarModel.Store.tb_aluguel" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_carro" EntityType="RentCarModel.Store.tb_carro" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_categoria" EntityType="RentCarModel.Store.tb_categoria" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_dominio" EntityType="RentCarModel.Store.tb_dominio" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_lista_espera" EntityType="RentCarModel.Store.tb_lista_espera" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_usuarios" EntityType="RentCarModel.Store.tb_usuarios" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="v_get_aluguel" EntityType="RentCarModel.Store.v_get_aluguel" store:Type="Views" store:Schema="dbo" store:Name="v_get_aluguel">
+            <DefiningQuery>SELECT 
+      [v_get_aluguel].[id] AS [id], 
+      [v_get_aluguel].[id_cliente] AS [id_cliente], 
+      [v_get_aluguel].[data_aluguel] AS [data_aluguel], 
+      [v_get_aluguel].[id_carro] AS [id_carro], 
+      [v_get_aluguel].[data_inicial] AS [data_inicial], 
+      [v_get_aluguel].[data_final] AS [data_final], 
+      [v_get_aluguel].[data_devolucao] AS [data_devolucao], 
+      [v_get_aluguel].[id_funcionario] AS [id_funcionario], 
+      [v_get_aluguel].[nome_cliente] AS [nome_cliente], 
+      [v_get_aluguel].[nome_funcionario] AS [nome_funcionario], 
+      [v_get_aluguel].[modelo] AS [modelo], 
+      [v_get_aluguel].[marca] AS [marca], 
+      [v_get_aluguel].[data_fabricacao] AS [data_fabricacao], 
+      [v_get_aluguel].[placa] AS [placa], 
+      [v_get_aluguel].[cor] AS [cor], 
+      [v_get_aluguel].[obs] AS [obs], 
+      [v_get_aluguel].[imagem] AS [imagem], 
+      [v_get_aluguel].[valor_diaria] AS [valor_diaria], 
+      [v_get_aluguel].[status] AS [status], 
+      [v_get_aluguel].[situacao] AS [situacao]
+      FROM [dbo].[v_get_aluguel] AS [v_get_aluguel]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_get_carros" EntityType="RentCarModel.Store.v_get_carros" store:Type="Views" store:Schema="dbo" store:Name="v_get_carros">
+            <DefiningQuery>SELECT 
+      [v_get_carros].[id] AS [id], 
+      [v_get_carros].[modelo] AS [modelo], 
+      [v_get_carros].[marca] AS [marca], 
+      [v_get_carros].[data_fabricacao] AS [data_fabricacao], 
+      [v_get_carros].[placa] AS [placa], 
+      [v_get_carros].[cor] AS [cor], 
+      [v_get_carros].[obs] AS [obs], 
+      [v_get_carros].[imagem] AS [imagem], 
+      [v_get_carros].[valor_diaria] AS [valor_diaria], 
+      [v_get_carros].[id_status] AS [id_status], 
+      [v_get_carros].[id_situacao] AS [id_situacao], 
+      [v_get_carros].[status] AS [status], 
+      [v_get_carros].[situacao] AS [situacao]
+      FROM [dbo].[v_get_carros] AS [v_get_carros]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_get_dominio_categoria" EntityType="RentCarModel.Store.v_get_dominio_categoria" store:Type="Views" store:Schema="dbo" store:Name="v_get_dominio_categoria">
+            <DefiningQuery>SELECT 
+      [v_get_dominio_categoria].[id_dominio] AS [id_dominio], 
+      [v_get_dominio_categoria].[descricao_dominio] AS [descricao_dominio], 
+      [v_get_dominio_categoria].[id_categoria] AS [id_categoria], 
+      [v_get_dominio_categoria].[descricao_categoria] AS [descricao_categoria]
+      FROM [dbo].[v_get_dominio_categoria] AS [v_get_dominio_categoria]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_get_lista_espera" EntityType="RentCarModel.Store.v_get_lista_espera" store:Type="Views" store:Schema="dbo" store:Name="v_get_lista_espera">
+            <DefiningQuery>SELECT 
+      [v_get_lista_espera].[id] AS [id], 
+      [v_get_lista_espera].[id_carro] AS [id_carro], 
+      [v_get_lista_espera].[id_cliente] AS [id_cliente], 
+      [v_get_lista_espera].[data_inicio] AS [data_inicio], 
+      [v_get_lista_espera].[data_fim] AS [data_fim], 
+      [v_get_lista_espera].[id_status] AS [id_status], 
+      [v_get_lista_espera].[nome_cliente] AS [nome_cliente], 
+      [v_get_lista_espera].[modelo] AS [modelo], 
+      [v_get_lista_espera].[marca] AS [marca], 
+      [v_get_lista_espera].[data_fabricacao] AS [data_fabricacao], 
+      [v_get_lista_espera].[placa] AS [placa], 
+      [v_get_lista_espera].[cor] AS [cor], 
+      [v_get_lista_espera].[obs] AS [obs], 
+      [v_get_lista_espera].[imagem] AS [imagem], 
+      [v_get_lista_espera].[valor_diaria] AS [valor_diaria], 
+      [v_get_lista_espera].[status] AS [status], 
+      [v_get_lista_espera].[situacao] AS [situacao]
+      FROM [dbo].[v_get_lista_espera] AS [v_get_lista_espera]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_get_usuarios" EntityType="RentCarModel.Store.v_get_usuarios" store:Type="Views" store:Schema="dbo" store:Name="v_get_usuarios">
+            <DefiningQuery>SELECT 
+      [v_get_usuarios].[id] AS [id], 
+      [v_get_usuarios].[nome] AS [nome], 
+      [v_get_usuarios].[cpf] AS [cpf], 
+      [v_get_usuarios].[login] AS [login], 
+      [v_get_usuarios].[senha] AS [senha], 
+      [v_get_usuarios].[id_status] AS [id_status], 
+      [v_get_usuarios].[id_tipo] AS [id_tipo], 
+      [v_get_usuarios].[logradouro] AS [logradouro], 
+      [v_get_usuarios].[cep] AS [cep], 
+      [v_get_usuarios].[id_cargo] AS [id_cargo], 
+      [v_get_usuarios].[obs] AS [obs], 
+      [v_get_usuarios].[numero] AS [numero], 
+      [v_get_usuarios].[complemento] AS [complemento], 
+      [v_get_usuarios].[status] AS [status], 
+      [v_get_usuarios].[tipo] AS [tipo], 
+      [v_get_usuarios].[cargo] AS [cargo]
+      FROM [dbo].[v_get_usuarios] AS [v_get_usuarios]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="tb_aluguel">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_cliente" Type="int" Nullable="false" />
+          <Property Name="data_aluguel" Type="date" Nullable="false" />
+          <Property Name="id_carro" Type="int" Nullable="false" />
+          <Property Name="data_inicial" Type="date" Nullable="false" />
+          <Property Name="data_final" Type="date" Nullable="false" />
+          <Property Name="data_devolucao" Type="date" />
+          <Property Name="id_funcionario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_carro">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="modelo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="marca" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="data_fabricacao" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="placa" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="cor" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="obs" Type="varchar" MaxLength="100" />
+          <Property Name="imagem" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="valor_diaria" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="id_status" Type="int" Nullable="false" />
+          <Property Name="id_situacao" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_categoria">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_dominio">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="categoria" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_lista_espera">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_carro" Type="int" Nullable="false" />
+          <Property Name="id_cliente" Type="int" Nullable="false" />
+          <Property Name="data_inicio" Type="varchar" MaxLength="50" />
+          <Property Name="data_fim" Type="varchar" MaxLength="50" />
+          <Property Name="id_status" Type="int" />
+        </EntityType>
+        <EntityType Name="tb_usuarios">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="cpf" Type="varchar" Nullable="false" MaxLength="14" />
+          <Property Name="login" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="senha" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="id_status" Type="int" Nullable="false" />
+          <Property Name="id_tipo" Type="int" Nullable="false" />
+          <Property Name="logradouro" Type="varchar" MaxLength="100" />
+          <Property Name="cep" Type="varchar" MaxLength="9" />
+          <Property Name="id_cargo" Type="int" />
+          <Property Name="obs" Type="varchar" MaxLength="100" />
+          <Property Name="numero" Type="varchar" MaxLength="50" />
+          <Property Name="complemento" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'RentCar.dbo.v_get_aluguel' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_get_aluguel">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="id_cliente" />
+            <PropertyRef Name="data_aluguel" />
+            <PropertyRef Name="id_carro" />
+            <PropertyRef Name="data_inicial" />
+            <PropertyRef Name="data_final" />
+            <PropertyRef Name="id_funcionario" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id_cliente" Type="int" Nullable="false" />
+          <Property Name="data_aluguel" Type="date" Nullable="false" />
+          <Property Name="id_carro" Type="int" Nullable="false" />
+          <Property Name="data_inicial" Type="date" Nullable="false" />
+          <Property Name="data_final" Type="date" Nullable="false" />
+          <Property Name="data_devolucao" Type="date" />
+          <Property Name="id_funcionario" Type="int" Nullable="false" />
+          <Property Name="nome_cliente" Type="varchar" MaxLength="50" />
+          <Property Name="nome_funcionario" Type="varchar" MaxLength="50" />
+          <Property Name="modelo" Type="varchar" MaxLength="50" />
+          <Property Name="marca" Type="varchar" MaxLength="50" />
+          <Property Name="data_fabricacao" Type="varchar" MaxLength="50" />
+          <Property Name="placa" Type="varchar" MaxLength="50" />
+          <Property Name="cor" Type="varchar" MaxLength="50" />
+          <Property Name="obs" Type="varchar" MaxLength="100" />
+          <Property Name="imagem" Type="varchar" MaxLength="100" />
+          <Property Name="valor_diaria" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="situacao" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'RentCar.dbo.v_get_carros' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_get_carros">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="modelo" />
+            <PropertyRef Name="marca" />
+            <PropertyRef Name="data_fabricacao" />
+            <PropertyRef Name="placa" />
+            <PropertyRef Name="cor" />
+            <PropertyRef Name="imagem" />
+            <PropertyRef Name="valor_diaria" />
+            <PropertyRef Name="id_status" />
+            <PropertyRef Name="id_situacao" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="modelo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="marca" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="data_fabricacao" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="placa" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="cor" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="obs" Type="varchar" MaxLength="100" />
+          <Property Name="imagem" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="valor_diaria" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="id_status" Type="int" Nullable="false" />
+          <Property Name="id_situacao" Type="int" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="situacao" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'RentCar.dbo.v_get_dominio_categoria' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_get_dominio_categoria">
+          <Key>
+            <PropertyRef Name="id_dominio" />
+            <PropertyRef Name="descricao_dominio" />
+          </Key>
+          <Property Name="id_dominio" Type="int" Nullable="false" />
+          <Property Name="descricao_dominio" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="id_categoria" Type="int" />
+          <Property Name="descricao_categoria" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'RentCar.dbo.v_get_lista_espera' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_get_lista_espera">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="id_carro" />
+            <PropertyRef Name="id_cliente" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id_carro" Type="int" Nullable="false" />
+          <Property Name="id_cliente" Type="int" Nullable="false" />
+          <Property Name="data_inicio" Type="varchar" MaxLength="50" />
+          <Property Name="data_fim" Type="varchar" MaxLength="50" />
+          <Property Name="id_status" Type="int" />
+          <Property Name="nome_cliente" Type="varchar" MaxLength="50" />
+          <Property Name="modelo" Type="varchar" MaxLength="50" />
+          <Property Name="marca" Type="varchar" MaxLength="50" />
+          <Property Name="data_fabricacao" Type="varchar" MaxLength="50" />
+          <Property Name="placa" Type="varchar" MaxLength="50" />
+          <Property Name="cor" Type="varchar" MaxLength="50" />
+          <Property Name="obs" Type="varchar" MaxLength="100" />
+          <Property Name="imagem" Type="varchar" MaxLength="100" />
+          <Property Name="valor_diaria" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="situacao" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'RentCar.dbo.v_get_usuarios' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_get_usuarios">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="nome" />
+            <PropertyRef Name="cpf" />
+            <PropertyRef Name="login" />
+            <PropertyRef Name="senha" />
+            <PropertyRef Name="id_status" />
+            <PropertyRef Name="id_tipo" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="nome" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="cpf" Type="varchar" Nullable="false" MaxLength="14" />
+          <Property Name="login" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="senha" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="id_status" Type="int" Nullable="false" />
+          <Property Name="id_tipo" Type="int" Nullable="false" />
+          <Property Name="logradouro" Type="varchar" MaxLength="100" />
+          <Property Name="cep" Type="varchar" MaxLength="9" />
+          <Property Name="id_cargo" Type="int" />
+          <Property Name="obs" Type="varchar" MaxLength="100" />
+          <Property Name="numero" Type="varchar" MaxLength="50" />
+          <Property Name="complemento" Type="varchar" MaxLength="50" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="tipo" Type="varchar" MaxLength="50" />
+          <Property Name="cargo" Type="varchar" MaxLength="50" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RentCarModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="RentCarEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="tb_aluguel" EntityType="RentCarModel.tb_aluguel" />
+          <EntitySet Name="tb_carro" EntityType="RentCarModel.tb_carro" />
+          <EntitySet Name="tb_categoria" EntityType="RentCarModel.tb_categoria" />
+          <EntitySet Name="tb_dominio" EntityType="RentCarModel.tb_dominio" />
+          <EntitySet Name="tb_lista_espera" EntityType="RentCarModel.tb_lista_espera" />
+          <EntitySet Name="tb_usuarios" EntityType="RentCarModel.tb_usuarios" />
+          <EntitySet Name="v_get_aluguel" EntityType="RentCarModel.v_get_aluguel" />
+          <EntitySet Name="v_get_carros" EntityType="RentCarModel.v_get_carros" />
+          <EntitySet Name="v_get_dominio_categoria" EntityType="RentCarModel.v_get_dominio_categoria" />
+          <EntitySet Name="v_get_lista_espera" EntityType="RentCarModel.v_get_lista_espera" />
+          <EntitySet Name="v_get_usuarios" EntityType="RentCarModel.v_get_usuarios" />
+        </EntityContainer>
+        <EntityType Name="tb_aluguel">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id_cliente" Nullable="false" />
+          <Property Type="DateTime" Name="data_aluguel" Nullable="false" />
+          <Property Type="Int32" Name="id_carro" Nullable="false" />
+          <Property Type="DateTime" Name="data_inicial" Nullable="false" />
+          <Property Type="DateTime" Name="data_final" Nullable="false" />
+          <Property Type="DateTime" Name="data_devolucao" />
+          <Property Type="Int32" Name="id_funcionario" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_carro">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="modelo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="marca" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="data_fabricacao" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="placa" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cor" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="obs" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="imagem" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="valor_diaria" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="Int32" Name="id_status" Nullable="false" />
+          <Property Type="Int32" Name="id_situacao" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_categoria">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="descricao" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tb_dominio">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="descricao" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="categoria" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_lista_espera">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id_carro" Nullable="false" />
+          <Property Type="Int32" Name="id_cliente" Nullable="false" />
+          <Property Type="String" Name="data_inicio" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="data_fim" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="id_status" />
+        </EntityType>
+        <EntityType Name="tb_usuarios">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="nome" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cpf" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="login" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="senha" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="id_status" Nullable="false" />
+          <Property Type="Int32" Name="id_tipo" Nullable="false" />
+          <Property Type="String" Name="logradouro" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cep" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="id_cargo" />
+          <Property Type="String" Name="obs" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="numero" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="complemento" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="v_get_aluguel">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="id_cliente" />
+            <PropertyRef Name="data_aluguel" />
+            <PropertyRef Name="id_carro" />
+            <PropertyRef Name="data_inicial" />
+            <PropertyRef Name="data_final" />
+            <PropertyRef Name="id_funcionario" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id_cliente" Nullable="false" />
+          <Property Type="DateTime" Name="data_aluguel" Nullable="false" />
+          <Property Type="Int32" Name="id_carro" Nullable="false" />
+          <Property Type="DateTime" Name="data_inicial" Nullable="false" />
+          <Property Type="DateTime" Name="data_final" Nullable="false" />
+          <Property Type="DateTime" Name="data_devolucao" />
+          <Property Type="Int32" Name="id_funcionario" Nullable="false" />
+          <Property Type="String" Name="nome_cliente" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nome_funcionario" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="modelo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="marca" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="data_fabricacao" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="placa" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cor" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="obs" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="imagem" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="valor_diaria" Precision="10" Scale="2" />
+          <Property Type="String" Name="status" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="situacao" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="v_get_carros">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="modelo" />
+            <PropertyRef Name="marca" />
+            <PropertyRef Name="data_fabricacao" />
+            <PropertyRef Name="placa" />
+            <PropertyRef Name="cor" />
+            <PropertyRef Name="imagem" />
+            <PropertyRef Name="valor_diaria" />
+            <PropertyRef Name="id_status" />
+            <PropertyRef Name="id_situacao" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="modelo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="marca" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="data_fabricacao" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="placa" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cor" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="obs" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="imagem" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="valor_diaria" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="Int32" Name="id_status" Nullable="false" />
+          <Property Type="Int32" Name="id_situacao" Nullable="false" />
+          <Property Type="String" Name="status" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="situacao" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="v_get_dominio_categoria">
+          <Key>
+            <PropertyRef Name="id_dominio" />
+            <PropertyRef Name="descricao_dominio" />
+          </Key>
+          <Property Type="Int32" Name="id_dominio" Nullable="false" />
+          <Property Type="String" Name="descricao_dominio" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="id_categoria" />
+          <Property Type="String" Name="descricao_categoria" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="v_get_lista_espera">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="id_carro" />
+            <PropertyRef Name="id_cliente" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id_carro" Nullable="false" />
+          <Property Type="Int32" Name="id_cliente" Nullable="false" />
+          <Property Type="String" Name="data_inicio" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="data_fim" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="id_status" />
+          <Property Type="String" Name="nome_cliente" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="modelo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="marca" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="data_fabricacao" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="placa" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cor" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="obs" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="imagem" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="valor_diaria" Precision="10" Scale="2" />
+          <Property Type="String" Name="status" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="situacao" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="v_get_usuarios">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="nome" />
+            <PropertyRef Name="cpf" />
+            <PropertyRef Name="login" />
+            <PropertyRef Name="senha" />
+            <PropertyRef Name="id_status" />
+            <PropertyRef Name="id_tipo" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="nome" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cpf" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="login" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="senha" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="id_status" Nullable="false" />
+          <Property Type="Int32" Name="id_tipo" Nullable="false" />
+          <Property Type="String" Name="logradouro" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cep" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="id_cargo" />
+          <Property Type="String" Name="obs" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="numero" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="complemento" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="status" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tipo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cargo" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RentCarModelStoreContainer" CdmEntityContainer="RentCarEntities" >
+          <EntitySetMapping Name="tb_aluguel">
+            <EntityTypeMapping TypeName="RentCarModel.tb_aluguel">
+              <MappingFragment StoreEntitySet="tb_aluguel">
+                <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
+                <ScalarProperty Name="data_devolucao" ColumnName="data_devolucao" />
+                <ScalarProperty Name="data_final" ColumnName="data_final" />
+                <ScalarProperty Name="data_inicial" ColumnName="data_inicial" />
+                <ScalarProperty Name="id_carro" ColumnName="id_carro" />
+                <ScalarProperty Name="data_aluguel" ColumnName="data_aluguel" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_carro">
+            <EntityTypeMapping TypeName="RentCarModel.tb_carro">
+              <MappingFragment StoreEntitySet="tb_carro">
+                <ScalarProperty Name="id_situacao" ColumnName="id_situacao" />
+                <ScalarProperty Name="id_status" ColumnName="id_status" />
+                <ScalarProperty Name="valor_diaria" ColumnName="valor_diaria" />
+                <ScalarProperty Name="imagem" ColumnName="imagem" />
+                <ScalarProperty Name="obs" ColumnName="obs" />
+                <ScalarProperty Name="cor" ColumnName="cor" />
+                <ScalarProperty Name="placa" ColumnName="placa" />
+                <ScalarProperty Name="data_fabricacao" ColumnName="data_fabricacao" />
+                <ScalarProperty Name="marca" ColumnName="marca" />
+                <ScalarProperty Name="modelo" ColumnName="modelo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_categoria">
+            <EntityTypeMapping TypeName="RentCarModel.tb_categoria">
+              <MappingFragment StoreEntitySet="tb_categoria">
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_dominio">
+            <EntityTypeMapping TypeName="RentCarModel.tb_dominio">
+              <MappingFragment StoreEntitySet="tb_dominio">
+                <ScalarProperty Name="categoria" ColumnName="categoria" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_lista_espera">
+            <EntityTypeMapping TypeName="RentCarModel.tb_lista_espera">
+              <MappingFragment StoreEntitySet="tb_lista_espera">
+                <ScalarProperty Name="id_status" ColumnName="id_status" />
+                <ScalarProperty Name="data_fim" ColumnName="data_fim" />
+                <ScalarProperty Name="data_inicio" ColumnName="data_inicio" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="id_carro" ColumnName="id_carro" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_usuarios">
+            <EntityTypeMapping TypeName="RentCarModel.tb_usuarios">
+              <MappingFragment StoreEntitySet="tb_usuarios">
+                <ScalarProperty Name="complemento" ColumnName="complemento" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="obs" ColumnName="obs" />
+                <ScalarProperty Name="id_cargo" ColumnName="id_cargo" />
+                <ScalarProperty Name="cep" ColumnName="cep" />
+                <ScalarProperty Name="logradouro" ColumnName="logradouro" />
+                <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+                <ScalarProperty Name="id_status" ColumnName="id_status" />
+                <ScalarProperty Name="senha" ColumnName="senha" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="cpf" ColumnName="cpf" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_get_aluguel">
+            <EntityTypeMapping TypeName="RentCarModel.v_get_aluguel">
+              <MappingFragment StoreEntitySet="v_get_aluguel">
+                <ScalarProperty Name="situacao" ColumnName="situacao" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="valor_diaria" ColumnName="valor_diaria" />
+                <ScalarProperty Name="imagem" ColumnName="imagem" />
+                <ScalarProperty Name="obs" ColumnName="obs" />
+                <ScalarProperty Name="cor" ColumnName="cor" />
+                <ScalarProperty Name="placa" ColumnName="placa" />
+                <ScalarProperty Name="data_fabricacao" ColumnName="data_fabricacao" />
+                <ScalarProperty Name="marca" ColumnName="marca" />
+                <ScalarProperty Name="modelo" ColumnName="modelo" />
+                <ScalarProperty Name="nome_funcionario" ColumnName="nome_funcionario" />
+                <ScalarProperty Name="nome_cliente" ColumnName="nome_cliente" />
+                <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
+                <ScalarProperty Name="data_devolucao" ColumnName="data_devolucao" />
+                <ScalarProperty Name="data_final" ColumnName="data_final" />
+                <ScalarProperty Name="data_inicial" ColumnName="data_inicial" />
+                <ScalarProperty Name="id_carro" ColumnName="id_carro" />
+                <ScalarProperty Name="data_aluguel" ColumnName="data_aluguel" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_get_carros">
+            <EntityTypeMapping TypeName="RentCarModel.v_get_carros">
+              <MappingFragment StoreEntitySet="v_get_carros">
+                <ScalarProperty Name="situacao" ColumnName="situacao" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="id_situacao" ColumnName="id_situacao" />
+                <ScalarProperty Name="id_status" ColumnName="id_status" />
+                <ScalarProperty Name="valor_diaria" ColumnName="valor_diaria" />
+                <ScalarProperty Name="imagem" ColumnName="imagem" />
+                <ScalarProperty Name="obs" ColumnName="obs" />
+                <ScalarProperty Name="cor" ColumnName="cor" />
+                <ScalarProperty Name="placa" ColumnName="placa" />
+                <ScalarProperty Name="data_fabricacao" ColumnName="data_fabricacao" />
+                <ScalarProperty Name="marca" ColumnName="marca" />
+                <ScalarProperty Name="modelo" ColumnName="modelo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_get_dominio_categoria">
+            <EntityTypeMapping TypeName="RentCarModel.v_get_dominio_categoria">
+              <MappingFragment StoreEntitySet="v_get_dominio_categoria">
+                <ScalarProperty Name="descricao_categoria" ColumnName="descricao_categoria" />
+                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+                <ScalarProperty Name="descricao_dominio" ColumnName="descricao_dominio" />
+                <ScalarProperty Name="id_dominio" ColumnName="id_dominio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_get_lista_espera">
+            <EntityTypeMapping TypeName="RentCarModel.v_get_lista_espera">
+              <MappingFragment StoreEntitySet="v_get_lista_espera">
+                <ScalarProperty Name="situacao" ColumnName="situacao" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="valor_diaria" ColumnName="valor_diaria" />
+                <ScalarProperty Name="imagem" ColumnName="imagem" />
+                <ScalarProperty Name="obs" ColumnName="obs" />
+                <ScalarProperty Name="cor" ColumnName="cor" />
+                <ScalarProperty Name="placa" ColumnName="placa" />
+                <ScalarProperty Name="data_fabricacao" ColumnName="data_fabricacao" />
+                <ScalarProperty Name="marca" ColumnName="marca" />
+                <ScalarProperty Name="modelo" ColumnName="modelo" />
+                <ScalarProperty Name="nome_cliente" ColumnName="nome_cliente" />
+                <ScalarProperty Name="id_status" ColumnName="id_status" />
+                <ScalarProperty Name="data_fim" ColumnName="data_fim" />
+                <ScalarProperty Name="data_inicio" ColumnName="data_inicio" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="id_carro" ColumnName="id_carro" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_get_usuarios">
+            <EntityTypeMapping TypeName="RentCarModel.v_get_usuarios">
+              <MappingFragment StoreEntitySet="v_get_usuarios">
+                <ScalarProperty Name="cargo" ColumnName="cargo" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="complemento" ColumnName="complemento" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="obs" ColumnName="obs" />
+                <ScalarProperty Name="id_cargo" ColumnName="id_cargo" />
+                <ScalarProperty Name="cep" ColumnName="cep" />
+                <ScalarProperty Name="logradouro" ColumnName="logradouro" />
+                <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+                <ScalarProperty Name="id_status" ColumnName="id_status" />
+                <ScalarProperty Name="senha" ColumnName="senha" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="cpf" ColumnName="cpf" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="rc" >
+        <EntityTypeShape EntityType="RentCarModel.tb_aluguel" Width="1.5" PointX="0.75" PointY="0.75" Height="2.5571907552083388" />
+        <EntityTypeShape EntityType="RentCarModel.tb_carro" Width="1.5" PointX="2.75" PointY="0.75" Height="3.1340950520833388" />
+        <EntityTypeShape EntityType="RentCarModel.tb_categoria" Width="1.5" PointX="4.75" PointY="0.75" Height="1.4033821614583388" />
+        <EntityTypeShape EntityType="RentCarModel.tb_dominio" Width="1.5" PointX="0.75" PointY="4.75" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="RentCarModel.tb_lista_espera" Width="1.5" PointX="2.75" PointY="4.75" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="RentCarModel.tb_usuarios" Width="1.5" PointX="4.75" PointY="3.75" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="RentCarModel.v_get_aluguel" Width="1.5" PointX="6.75" PointY="0.75" Height="4.8648079427083388" />
+        <EntityTypeShape EntityType="RentCarModel.v_get_carros" Width="1.5" PointX="6.75" PointY="6.75" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="RentCarModel.v_get_dominio_categoria" Width="1.5" PointX="0.75" PointY="7.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="RentCarModel.v_get_lista_espera" Width="1.5" PointX="8.75" PointY="0.75" Height="4.2879036458333282" />
+        <EntityTypeShape EntityType="RentCarModel.v_get_usuarios" Width="1.5" PointX="2.75" PointY="8.75" Height="4.0956022135416674" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

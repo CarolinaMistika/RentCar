@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RentCarModelStoreContainer" CdmEntityContainer="RentCarEntities">
+    <EntitySetMapping Name="tb_aluguel">
+      <EntityTypeMapping TypeName="RentCarModel.tb_aluguel">
+        <MappingFragment StoreEntitySet="tb_aluguel">
+          <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
+          <ScalarProperty Name="data_devolucao" ColumnName="data_devolucao" />
+          <ScalarProperty Name="data_final" ColumnName="data_final" />
+          <ScalarProperty Name="data_inicial" ColumnName="data_inicial" />
+          <ScalarProperty Name="id_carro" ColumnName="id_carro" />
+          <ScalarProperty Name="data_aluguel" ColumnName="data_aluguel" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_carro">
+      <EntityTypeMapping TypeName="RentCarModel.tb_carro">
+        <MappingFragment StoreEntitySet="tb_carro">
+          <ScalarProperty Name="id_situacao" ColumnName="id_situacao" />
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="valor_diaria" ColumnName="valor_diaria" />
+          <ScalarProperty Name="imagem" ColumnName="imagem" />
+          <ScalarProperty Name="obs" ColumnName="obs" />
+          <ScalarProperty Name="cor" ColumnName="cor" />
+          <ScalarProperty Name="placa" ColumnName="placa" />
+          <ScalarProperty Name="data_fabricacao" ColumnName="data_fabricacao" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_categoria">
+      <EntityTypeMapping TypeName="RentCarModel.tb_categoria">
+        <MappingFragment StoreEntitySet="tb_categoria">
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_dominio">
+      <EntityTypeMapping TypeName="RentCarModel.tb_dominio">
+        <MappingFragment StoreEntitySet="tb_dominio">
+          <ScalarProperty Name="categoria" ColumnName="categoria" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_lista_espera">
+      <EntityTypeMapping TypeName="RentCarModel.tb_lista_espera">
+        <MappingFragment StoreEntitySet="tb_lista_espera">
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="data_fim" ColumnName="data_fim" />
+          <ScalarProperty Name="data_inicio" ColumnName="data_inicio" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="id_carro" ColumnName="id_carro" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_usuarios">
+      <EntityTypeMapping TypeName="RentCarModel.tb_usuarios">
+        <MappingFragment StoreEntitySet="tb_usuarios">
+          <ScalarProperty Name="complemento" ColumnName="complemento" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="obs" ColumnName="obs" />
+          <ScalarProperty Name="id_cargo" ColumnName="id_cargo" />
+          <ScalarProperty Name="cep" ColumnName="cep" />
+          <ScalarProperty Name="logradouro" ColumnName="logradouro" />
+          <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="cpf" ColumnName="cpf" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_get_aluguel">
+      <EntityTypeMapping TypeName="RentCarModel.v_get_aluguel">
+        <MappingFragment StoreEntitySet="v_get_aluguel">
+          <ScalarProperty Name="situacao" ColumnName="situacao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="valor_diaria" ColumnName="valor_diaria" />
+          <ScalarProperty Name="imagem" ColumnName="imagem" />
+          <ScalarProperty Name="obs" ColumnName="obs" />
+          <ScalarProperty Name="cor" ColumnName="cor" />
+          <ScalarProperty Name="placa" ColumnName="placa" />
+          <ScalarProperty Name="data_fabricacao" ColumnName="data_fabricacao" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="nome_funcionario" ColumnName="nome_funcionario" />
+          <ScalarProperty Name="nome_cliente" ColumnName="nome_cliente" />
+          <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
+          <ScalarProperty Name="data_devolucao" ColumnName="data_devolucao" />
+          <ScalarProperty Name="data_final" ColumnName="data_final" />
+          <ScalarProperty Name="data_inicial" ColumnName="data_inicial" />
+          <ScalarProperty Name="id_carro" ColumnName="id_carro" />
+          <ScalarProperty Name="data_aluguel" ColumnName="data_aluguel" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_get_carros">
+      <EntityTypeMapping TypeName="RentCarModel.v_get_carros">
+        <MappingFragment StoreEntitySet="v_get_carros">
+          <ScalarProperty Name="situacao" ColumnName="situacao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="id_situacao" ColumnName="id_situacao" />
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="valor_diaria" ColumnName="valor_diaria" />
+          <ScalarProperty Name="imagem" ColumnName="imagem" />
+          <ScalarProperty Name="obs" ColumnName="obs" />
+          <ScalarProperty Name="cor" ColumnName="cor" />
+          <ScalarProperty Name="placa" ColumnName="placa" />
+          <ScalarProperty Name="data_fabricacao" ColumnName="data_fabricacao" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_get_dominio_categoria">
+      <EntityTypeMapping TypeName="RentCarModel.v_get_dominio_categoria">
+        <MappingFragment StoreEntitySet="v_get_dominio_categoria">
+          <ScalarProperty Name="descricao_categoria" ColumnName="descricao_categoria" />
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="descricao_dominio" ColumnName="descricao_dominio" />
+          <ScalarProperty Name="id_dominio" ColumnName="id_dominio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_get_lista_espera">
+      <EntityTypeMapping TypeName="RentCarModel.v_get_lista_espera">
+        <MappingFragment StoreEntitySet="v_get_lista_espera">
+          <ScalarProperty Name="situacao" ColumnName="situacao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="valor_diaria" ColumnName="valor_diaria" />
+          <ScalarProperty Name="imagem" ColumnName="imagem" />
+          <ScalarProperty Name="obs" ColumnName="obs" />
+          <ScalarProperty Name="cor" ColumnName="cor" />
+          <ScalarProperty Name="placa" ColumnName="placa" />
+          <ScalarProperty Name="data_fabricacao" ColumnName="data_fabricacao" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="nome_cliente" ColumnName="nome_cliente" />
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="data_fim" ColumnName="data_fim" />
+          <ScalarProperty Name="data_inicio" ColumnName="data_inicio" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="id_carro" ColumnName="id_carro" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_get_usuarios">
+      <EntityTypeMapping TypeName="RentCarModel.v_get_usuarios">
+        <MappingFragment StoreEntitySet="v_get_usuarios">
+          <ScalarProperty Name="cargo" ColumnName="cargo" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="complemento" ColumnName="complemento" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="obs" ColumnName="obs" />
+          <ScalarProperty Name="id_cargo" ColumnName="id_cargo" />
+          <ScalarProperty Name="cep" ColumnName="cep" />
+          <ScalarProperty Name="logradouro" ColumnName="logradouro" />
+          <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="cpf" ColumnName="cpf" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

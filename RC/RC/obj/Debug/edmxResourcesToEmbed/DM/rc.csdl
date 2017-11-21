@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RentCarModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="RentCarEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tb_aluguel" EntityType="RentCarModel.tb_aluguel" />
+    <EntitySet Name="tb_carro" EntityType="RentCarModel.tb_carro" />
+    <EntitySet Name="tb_categoria" EntityType="RentCarModel.tb_categoria" />
+    <EntitySet Name="tb_dominio" EntityType="RentCarModel.tb_dominio" />
+    <EntitySet Name="tb_lista_espera" EntityType="RentCarModel.tb_lista_espera" />
+    <EntitySet Name="tb_usuarios" EntityType="RentCarModel.tb_usuarios" />
+    <EntitySet Name="v_get_aluguel" EntityType="RentCarModel.v_get_aluguel" />
+    <EntitySet Name="v_get_carros" EntityType="RentCarModel.v_get_carros" />
+    <EntitySet Name="v_get_dominio_categoria" EntityType="RentCarModel.v_get_dominio_categoria" />
+    <EntitySet Name="v_get_lista_espera" EntityType="RentCarModel.v_get_lista_espera" />
+    <EntitySet Name="v_get_usuarios" EntityType="RentCarModel.v_get_usuarios" />
+  </EntityContainer>
+  <EntityType Name="tb_aluguel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="id_cliente" Nullable="false" />
+    <Property Type="DateTime" Name="data_aluguel" Nullable="false" />
+    <Property Type="Int32" Name="id_carro" Nullable="false" />
+    <Property Type="DateTime" Name="data_inicial" Nullable="false" />
+    <Property Type="DateTime" Name="data_final" Nullable="false" />
+    <Property Type="DateTime" Name="data_devolucao" />
+    <Property Type="Int32" Name="id_funcionario" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_carro">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="modelo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="marca" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="data_fabricacao" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="placa" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cor" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="obs" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="imagem" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="valor_diaria" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="Int32" Name="id_status" Nullable="false" />
+    <Property Type="Int32" Name="id_situacao" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_categoria">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="descricao" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tb_dominio">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="descricao" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="categoria" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_lista_espera">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="id_carro" Nullable="false" />
+    <Property Type="Int32" Name="id_cliente" Nullable="false" />
+    <Property Type="String" Name="data_inicio" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="data_fim" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="id_status" />
+  </EntityType>
+  <EntityType Name="tb_usuarios">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="nome" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cpf" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="login" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="senha" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="id_status" Nullable="false" />
+    <Property Type="Int32" Name="id_tipo" Nullable="false" />
+    <Property Type="String" Name="logradouro" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cep" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="id_cargo" />
+    <Property Type="String" Name="obs" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="numero" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="complemento" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="v_get_aluguel">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="id_cliente" />
+      <PropertyRef Name="data_aluguel" />
+      <PropertyRef Name="id_carro" />
+      <PropertyRef Name="data_inicial" />
+      <PropertyRef Name="data_final" />
+      <PropertyRef Name="id_funcionario" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="id_cliente" Nullable="false" />
+    <Property Type="DateTime" Name="data_aluguel" Nullable="false" />
+    <Property Type="Int32" Name="id_carro" Nullable="false" />
+    <Property Type="DateTime" Name="data_inicial" Nullable="false" />
+    <Property Type="DateTime" Name="data_final" Nullable="false" />
+    <Property Type="DateTime" Name="data_devolucao" />
+    <Property Type="Int32" Name="id_funcionario" Nullable="false" />
+    <Property Type="String" Name="nome_cliente" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nome_funcionario" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="modelo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="marca" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="data_fabricacao" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="placa" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cor" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="obs" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="imagem" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="valor_diaria" Precision="10" Scale="2" />
+    <Property Type="String" Name="status" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="situacao" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="v_get_carros">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="modelo" />
+      <PropertyRef Name="marca" />
+      <PropertyRef Name="data_fabricacao" />
+      <PropertyRef Name="placa" />
+      <PropertyRef Name="cor" />
+      <PropertyRef Name="imagem" />
+      <PropertyRef Name="valor_diaria" />
+      <PropertyRef Name="id_status" />
+      <PropertyRef Name="id_situacao" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="modelo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="marca" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="data_fabricacao" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="placa" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cor" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="obs" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="imagem" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="valor_diaria" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="Int32" Name="id_status" Nullable="false" />
+    <Property Type="Int32" Name="id_situacao" Nullable="false" />
+    <Property Type="String" Name="status" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="situacao" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="v_get_dominio_categoria">
+    <Key>
+      <PropertyRef Name="id_dominio" />
+      <PropertyRef Name="descricao_dominio" />
+    </Key>
+    <Property Type="Int32" Name="id_dominio" Nullable="false" />
+    <Property Type="String" Name="descricao_dominio" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="id_categoria" />
+    <Property Type="String" Name="descricao_categoria" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="v_get_lista_espera">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="id_carro" />
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="id_carro" Nullable="false" />
+    <Property Type="Int32" Name="id_cliente" Nullable="false" />
+    <Property Type="String" Name="data_inicio" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="data_fim" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="id_status" />
+    <Property Type="String" Name="nome_cliente" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="modelo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="marca" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="data_fabricacao" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="placa" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cor" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="obs" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="imagem" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="valor_diaria" Precision="10" Scale="2" />
+    <Property Type="String" Name="status" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="situacao" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="v_get_usuarios">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="nome" />
+      <PropertyRef Name="cpf" />
+      <PropertyRef Name="login" />
+      <PropertyRef Name="senha" />
+      <PropertyRef Name="id_status" />
+      <PropertyRef Name="id_tipo" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="nome" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cpf" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="login" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="senha" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="id_status" Nullable="false" />
+    <Property Type="Int32" Name="id_tipo" Nullable="false" />
+    <Property Type="String" Name="logradouro" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cep" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="id_cargo" />
+    <Property Type="String" Name="obs" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="numero" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="complemento" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="status" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tipo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cargo" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,16 @@
+\\Laptop-sfbor5p7\rc\RC\obj\Debug\RC.csprojResolveAssemblyReference.cache
+\\Laptop-sfbor5p7\rc\RC\obj\Debug\RC.dll
+\\Laptop-sfbor5p7\rc\RC\obj\Debug\RC.pdb
+D:\Carolina\Projetos\RC\RC\bin\RC.dll
+D:\Carolina\Projetos\RC\RC\bin\RC.pdb
+D:\Carolina\Projetos\RC\RC\bin\EntityFramework.dll
+D:\Carolina\Projetos\RC\RC\bin\EntityFramework.xml
+D:\Carolina\Projetos\RC\RC\obj\Debug\RC.dll
+D:\Carolina\Projetos\RC\RC\obj\Debug\RC.pdb
+D:\Carolina\FACULDADE\RC\RC\obj\Debug\RC.csprojResolveAssemblyReference.cache
+D:\Carolina\FACULDADE\RC\RC\obj\Debug\RC.dll
+D:\Carolina\FACULDADE\RC\RC\bin\RC.dll
+D:\Carolina\FACULDADE\RC\RC\bin\RC.pdb
+D:\Carolina\FACULDADE\RC\RC\bin\EntityFramework.dll
+D:\Carolina\FACULDADE\RC\RC\bin\EntityFramework.xml
+D:\Carolina\FACULDADE\RC\RC\obj\Debug\RC.pdb

@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RentCarModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="RentCarModelStoreContainer">
+    <EntitySet Name="tb_aluguel" EntityType="RentCarModel.Store.tb_aluguel" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_carro" EntityType="RentCarModel.Store.tb_carro" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_categoria" EntityType="RentCarModel.Store.tb_categoria" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_dominio" EntityType="RentCarModel.Store.tb_dominio" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_lista_espera" EntityType="RentCarModel.Store.tb_lista_espera" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_usuarios" EntityType="RentCarModel.Store.tb_usuarios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="v_get_aluguel" EntityType="RentCarModel.Store.v_get_aluguel" store:Type="Views" store:Schema="dbo" store:Name="v_get_aluguel">
+      <DefiningQuery>SELECT 
+      [v_get_aluguel].[id] AS [id], 
+      [v_get_aluguel].[id_cliente] AS [id_cliente], 
+      [v_get_aluguel].[data_aluguel] AS [data_aluguel], 
+      [v_get_aluguel].[id_carro] AS [id_carro], 
+      [v_get_aluguel].[data_inicial] AS [data_inicial], 
+      [v_get_aluguel].[data_final] AS [data_final], 
+      [v_get_aluguel].[data_devolucao] AS [data_devolucao], 
+      [v_get_aluguel].[id_funcionario] AS [id_funcionario], 
+      [v_get_aluguel].[nome_cliente] AS [nome_cliente], 
+      [v_get_aluguel].[nome_funcionario] AS [nome_funcionario], 
+      [v_get_aluguel].[modelo] AS [modelo], 
+      [v_get_aluguel].[marca] AS [marca], 
+      [v_get_aluguel].[data_fabricacao] AS [data_fabricacao], 
+      [v_get_aluguel].[placa] AS [placa], 
+      [v_get_aluguel].[cor] AS [cor], 
+      [v_get_aluguel].[obs] AS [obs], 
+      [v_get_aluguel].[imagem] AS [imagem], 
+      [v_get_aluguel].[valor_diaria] AS [valor_diaria], 
+      [v_get_aluguel].[status] AS [status], 
+      [v_get_aluguel].[situacao] AS [situacao]
+      FROM [dbo].[v_get_aluguel] AS [v_get_aluguel]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_get_carros" EntityType="RentCarModel.Store.v_get_carros" store:Type="Views" store:Schema="dbo" store:Name="v_get_carros">
+      <DefiningQuery>SELECT 
+      [v_get_carros].[id] AS [id], 
+      [v_get_carros].[modelo] AS [modelo], 
+      [v_get_carros].[marca] AS [marca], 
+      [v_get_carros].[data_fabricacao] AS [data_fabricacao], 
+      [v_get_carros].[placa] AS [placa], 
+      [v_get_carros].[cor] AS [cor], 
+      [v_get_carros].[obs] AS [obs], 
+      [v_get_carros].[imagem] AS [imagem], 
+      [v_get_carros].[valor_diaria] AS [valor_diaria], 
+      [v_get_carros].[id_status] AS [id_status], 
+      [v_get_carros].[id_situacao] AS [id_situacao], 
+      [v_get_carros].[status] AS [status], 
+      [v_get_carros].[situacao] AS [situacao]
+      FROM [dbo].[v_get_carros] AS [v_get_carros]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_get_dominio_categoria" EntityType="RentCarModel.Store.v_get_dominio_categoria" store:Type="Views" store:Schema="dbo" store:Name="v_get_dominio_categoria">
+      <DefiningQuery>SELECT 
+      [v_get_dominio_categoria].[id_dominio] AS [id_dominio], 
+      [v_get_dominio_categoria].[descricao_dominio] AS [descricao_dominio], 
+      [v_get_dominio_categoria].[id_categoria] AS [id_categoria], 
+      [v_get_dominio_categoria].[descricao_categoria] AS [descricao_categoria]
+      FROM [dbo].[v_get_dominio_categoria] AS [v_get_dominio_categoria]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_get_lista_espera" EntityType="RentCarModel.Store.v_get_lista_espera" store:Type="Views" store:Schema="dbo" store:Name="v_get_lista_espera">
+      <DefiningQuery>SELECT 
+      [v_get_lista_espera].[id] AS [id], 
+      [v_get_lista_espera].[id_carro] AS [id_carro], 
+      [v_get_lista_espera].[id_cliente] AS [id_cliente], 
+      [v_get_lista_espera].[data_inicio] AS [data_inicio], 
+      [v_get_lista_espera].[data_fim] AS [data_fim], 
+      [v_get_lista_espera].[id_status] AS [id_status], 
+      [v_get_lista_espera].[nome_cliente] AS [nome_cliente], 
+      [v_get_lista_espera].[modelo] AS [modelo], 
+      [v_get_lista_espera].[marca] AS [marca], 
+      [v_get_lista_espera].[data_fabricacao] AS [data_fabricacao], 
+      [v_get_lista_espera].[placa] AS [placa], 
+      [v_get_lista_espera].[cor] AS [cor], 
+      [v_get_lista_espera].[obs] AS [obs], 
+      [v_get_lista_espera].[imagem] AS [imagem], 
+      [v_get_lista_espera].[valor_diaria] AS [valor_diaria], 
+      [v_get_lista_espera].[status] AS [status], 
+      [v_get_lista_espera].[situacao] AS [situacao]
+      FROM [dbo].[v_get_lista_espera] AS [v_get_lista_espera]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_get_usuarios" EntityType="RentCarModel.Store.v_get_usuarios" store:Type="Views" store:Schema="dbo" store:Name="v_get_usuarios">
+      <DefiningQuery>SELECT 
+      [v_get_usuarios].[id] AS [id], 
+      [v_get_usuarios].[nome] AS [nome], 
+      [v_get_usuarios].[cpf] AS [cpf], 
+      [v_get_usuarios].[login] AS [login], 
+      [v_get_usuarios].[senha] AS [senha], 
+      [v_get_usuarios].[id_status] AS [id_status], 
+      [v_get_usuarios].[id_tipo] AS [id_tipo], 
+      [v_get_usuarios].[logradouro] AS [logradouro], 
+      [v_get_usuarios].[cep] AS [cep], 
+      [v_get_usuarios].[id_cargo] AS [id_cargo], 
+      [v_get_usuarios].[obs] AS [obs], 
+      [v_get_usuarios].[numero] AS [numero], 
+      [v_get_usuarios].[complemento] AS [complemento], 
+      [v_get_usuarios].[status] AS [status], 
+      [v_get_usuarios].[tipo] AS [tipo], 
+      [v_get_usuarios].[cargo] AS [cargo]
+      FROM [dbo].[v_get_usuarios] AS [v_get_usuarios]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <EntityType Name="tb_aluguel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="id_cliente" Type="int" Nullable="false" />
+    <Property Name="data_aluguel" Type="date" Nullable="false" />
+    <Property Name="id_carro" Type="int" Nullable="false" />
+    <Property Name="data_inicial" Type="date" Nullable="false" />
+    <Property Name="data_final" Type="date" Nullable="false" />
+    <Property Name="data_devolucao" Type="date" />
+    <Property Name="id_funcionario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_carro">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="modelo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="marca" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="data_fabricacao" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="placa" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="cor" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="obs" Type="varchar" MaxLength="100" />
+    <Property Name="imagem" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="valor_diaria" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="id_status" Type="int" Nullable="false" />
+    <Property Name="id_situacao" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_categoria">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tb_dominio">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="categoria" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_lista_espera">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="id_carro" Type="int" Nullable="false" />
+    <Property Name="id_cliente" Type="int" Nullable="false" />
+    <Property Name="data_inicio" Type="varchar" MaxLength="50" />
+    <Property Name="data_fim" Type="varchar" MaxLength="50" />
+    <Property Name="id_status" Type="int" />
+  </EntityType>
+  <EntityType Name="tb_usuarios">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="cpf" Type="varchar" Nullable="false" MaxLength="14" />
+    <Property Name="login" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="senha" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="id_status" Type="int" Nullable="false" />
+    <Property Name="id_tipo" Type="int" Nullable="false" />
+    <Property Name="logradouro" Type="varchar" MaxLength="100" />
+    <Property Name="cep" Type="varchar" MaxLength="9" />
+    <Property Name="id_cargo" Type="int" />
+    <Property Name="obs" Type="varchar" MaxLength="100" />
+    <Property Name="numero" Type="varchar" MaxLength="50" />
+    <Property Name="complemento" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'RentCar.dbo.v_get_aluguel' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="v_get_aluguel">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="id_cliente" />
+      <PropertyRef Name="data_aluguel" />
+      <PropertyRef Name="id_carro" />
+      <PropertyRef Name="data_inicial" />
+      <PropertyRef Name="data_final" />
+      <PropertyRef Name="id_funcionario" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id_cliente" Type="int" Nullable="false" />
+    <Property Name="data_aluguel" Type="date" Nullable="false" />
+    <Property Name="id_carro" Type="int" Nullable="false" />
+    <Property Name="data_inicial" Type="date" Nullable="false" />
+    <Property Name="data_final" Type="date" Nullable="false" />
+    <Property Name="data_devolucao" Type="date" />
+    <Property Name="id_funcionario" Type="int" Nullable="false" />
+    <Property Name="nome_cliente" Type="varchar" MaxLength="50" />
+    <Property Name="nome_funcionario" Type="varchar" MaxLength="50" />
+    <Property Name="modelo" Type="varchar" MaxLength="50" />
+    <Property Name="marca" Type="varchar" MaxLength="50" />
+    <Property Name="data_fabricacao" Type="varchar" MaxLength="50" />
+    <Property Name="placa" Type="varchar" MaxLength="50" />
+    <Property Name="cor" Type="varchar" MaxLength="50" />
+    <Property Name="obs" Type="varchar" MaxLength="100" />
+    <Property Name="imagem" Type="varchar" MaxLength="100" />
+    <Property Name="valor_diaria" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="situacao" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'RentCar.dbo.v_get_carros' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="v_get_carros">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="modelo" />
+      <PropertyRef Name="marca" />
+      <PropertyRef Name="data_fabricacao" />
+      <PropertyRef Name="placa" />
+      <PropertyRef Name="cor" />
+      <PropertyRef Name="imagem" />
+      <PropertyRef Name="valor_diaria" />
+      <PropertyRef Name="id_status" />
+      <PropertyRef Name="id_situacao" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="modelo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="marca" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="data_fabricacao" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="placa" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="cor" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="obs" Type="varchar" MaxLength="100" />
+    <Property Name="imagem" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="valor_diaria" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="id_status" Type="int" Nullable="false" />
+    <Property Name="id_situacao" Type="int" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="situacao" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'RentCar.dbo.v_get_dominio_categoria' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="v_get_dominio_categoria">
+    <Key>
+      <PropertyRef Name="id_dominio" />
+      <PropertyRef Name="descricao_dominio" />
+    </Key>
+    <Property Name="id_dominio" Type="int" Nullable="false" />
+    <Property Name="descricao_dominio" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="id_categoria" Type="int" />
+    <Property Name="descricao_categoria" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'RentCar.dbo.v_get_lista_espera' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="v_get_lista_espera">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="id_carro" />
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id_carro" Type="int" Nullable="false" />
+    <Property Name="id_cliente" Type="int" Nullable="false" />
+    <Property Name="data_inicio" Type="varchar" MaxLength="50" />
+    <Property Name="data_fim" Type="varchar" MaxLength="50" />
+    <Property Name="id_status" Type="int" />
+    <Property Name="nome_cliente" Type="varchar" MaxLength="50" />
+    <Property Name="modelo" Type="varchar" MaxLength="50" />
+    <Property Name="marca" Type="varchar" MaxLength="50" />
+    <Property Name="data_fabricacao" Type="varchar" MaxLength="50" />
+    <Property Name="placa" Type="varchar" MaxLength="50" />
+    <Property Name="cor" Type="varchar" MaxLength="50" />
+    <Property Name="obs" Type="varchar" MaxLength="100" />
+    <Property Name="imagem" Type="varchar" MaxLength="100" />
+    <Property Name="valor_diaria" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="situacao" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'RentCar.dbo.v_get_usuarios' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="v_get_usuarios">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="nome" />
+      <PropertyRef Name="cpf" />
+      <PropertyRef Name="login" />
+      <PropertyRef Name="senha" />
+      <PropertyRef Name="id_status" />
+      <PropertyRef Name="id_tipo" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="cpf" Type="varchar" Nullable="false" MaxLength="14" />
+    <Property Name="login" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="senha" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="id_status" Type="int" Nullable="false" />
+    <Property Name="id_tipo" Type="int" Nullable="false" />
+    <Property Name="logradouro" Type="varchar" MaxLength="100" />
+    <Property Name="cep" Type="varchar" MaxLength="9" />
+    <Property Name="id_cargo" Type="int" />
+    <Property Name="obs" Type="varchar" MaxLength="100" />
+    <Property Name="numero" Type="varchar" MaxLength="50" />
+    <Property Name="complemento" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="tipo" Type="varchar" MaxLength="50" />
+    <Property Name="cargo" Type="varchar" MaxLength="50" />
+  </EntityType>
+</Schema>

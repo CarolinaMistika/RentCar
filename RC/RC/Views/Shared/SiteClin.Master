@@ -1,0 +1,164 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aluguel de carro</title>
+    <div id="scripts-principais">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DataTables | Gentelella</title>
+        <link href="../../Content/css/Style.css" rel="stylesheet" type="text/css" />
+        <!-- Bootstrap -->
+        <link href="../../Content/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link href="../../Content/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <!-- NProgress -->
+        <link href="../../Content/vendors/nprogress/nprogress.css" rel="stylesheet">
+        <!-- iCheck -->
+        <link href="../../Content/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+        <!-- Datatables -->
+        <link href="../../Content/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css"
+            rel="stylesheet">
+        <link href="../../Content/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css"
+            rel="stylesheet">
+        <link href="../../Content/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css"
+            rel="stylesheet">
+        <link href="../../Content/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css"
+            rel="stylesheet">
+        <link href="../../Content/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css"
+            rel="stylesheet">
+        <!-- bootstrap-wysiwyg -->
+        <link href="../../Content/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+        <!-- Select2 -->
+        <link href="../../Content/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+        <!-- Switchery -->
+        <link href="../../Content/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+        <!-- starrr -->
+        <link href="../../Content/vendors/starrr/dist/starrr.css" rel="stylesheet">
+        <!-- bootstrap-daterangepicker -->
+        <link href="../../Content/vendors/bootstrap-daterangepicker/daterangepicker.css"
+            rel="stylesheet">
+        <!-- Custom Theme Style -->
+        <link href="../../Content/build/css/custom.min.css" rel="stylesheet">
+        <!-- jQuery -->
+        <script src="../../Content/vendors/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="../../Content/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- FastClick -->
+        <script src="../../Content/vendors/fastclick/lib/fastclick.js"></script>
+        <!-- NProgress -->
+        <script src="../../Content/vendors/nprogress/nprogress.js"></script>
+        <!-- iCheck -->
+        <script src="../../Content/vendors/iCheck/icheck.min.js"></script>
+        <!-- Datatables -->
+        <script src="../../Content/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="../../Content/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../../Content/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+        <script src="../../Content/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../../Content/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+        <script src="../../Content/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+        <script src="../../Content/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+        <script src="../../Content/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+        <script src="../../Content/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+        <script src="../../Content/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="../../Content/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+        <script src="../../Content/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+        <script src="../../Content/vendors/jszip/dist/jszip.min.js"></script>
+        <script src="../../Content/vendors/pdfmake/build/pdfmake.min.js"></script>
+        <script src="../../Content/vendors/pdfmake/build/vfs_fonts.js"></script>
+    </div>
+</head>
+<body>
+    <body class="nav-md">
+        <div class="container body">
+            <div class="main_container">
+                <div class="page">
+                    <!-- top navigation -->
+                    <div class="top_nav-clin">
+                        <div class="nav_menu">
+                            <nav>
+                              <div class="nav toggle">
+                               <a href="../Home/Index">
+                                        <img src="../../Content/images/LOGO.png" width="50px" />
+                                    </a>
+                              </div>
+                              <ul class="nav navbar-nav navbar-right">
+                                <li class="">                              
+                                  <a href="../Account/LogOn"><i class="fa fa-sign-in pull-right"></i> Login</a>                                                    
+                                </li>
+                              </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- /top navigation -->
+                    <!-- page content -->
+                    <div class="" role="main">
+                        <div class="">
+                            <div class="page-title">
+                                <div class="col-md-10">
+                                    <h3>
+                                        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1 col-sm-1 col-xs-1">
+                                </div>
+                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                                </div>
+                                <div class="col-md-1 col-sm-1 col-xs-1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <div id="scripts">
+        <!-- bootstrap-progressbar -->
+        <script src="../../Content/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+        <!-- iCheck -->
+        <script src="../../Content/vendors/iCheck/icheck.min.js"></script>
+        <!-- bootstrap-daterangepicker -->
+        <script src="../../Content/vendors/moment/min/moment.min.js"></script>
+        <script src="../../Content/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <!-- bootstrap-wysiwyg -->
+        <script src="../../Content/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+        <script src="../../Content/vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+        <script src="../../Content/vendors/google-code-prettify/src/prettify.js"></script>
+        <!-- jQuery Tags Input -->
+        <script src="../../Content/vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+        <!-- Switchery -->
+        <script src="../../Content/vendors/switchery/dist/switchery.min.js"></script>
+        <!-- Select2 -->
+        <script src="../../Content/vendors/select2/dist/js/select2.full.min.js"></script>
+        <!-- Parsley -->
+        <script src="../../Content/vendors/parsleyjs/dist/parsley.min.js"></script>
+        <!-- Autosize -->
+        <script src="../../Content/vendors/autosize/dist/autosize.min.js"></script>
+        <!-- jQuery autocomplete -->
+        <script src="../../Content/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+        <!-- starrr -->
+        <script src="../../Content/vendors/starrr/dist/starrr.js"></script>
+        <!-- Custom Theme Scripts -->
+        <script src="../../Content/build/js/custom.min.js"></script>
+        <!-- Sweet alert -->
+        <%--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>--%>
+        <script src="../../Content/sweet/sweetalert.min.js" charset="utf-8" type="text/javascript"></script>
+        <link href="../../Content/sweet/sweetalert.css" rel="stylesheet" type="text/css" />
+        <link href="../../Content/sweet/themes/facebook/facebook.css" rel="stylesheet" type="text/css" />
+        <!-- Masck -->
+        <script src="../../Content/js/jquery.mask.js" type="text/javascript"></script>
+        <!-- Funcoes -->
+        <script src="../../Scripts/geral/funcoes.js" type="text/javascript"></script>
+    </div>
+</body>
+</html>
